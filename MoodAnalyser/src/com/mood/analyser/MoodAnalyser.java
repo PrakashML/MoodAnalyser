@@ -1,16 +1,20 @@
 package com.mood.analyser;
 
 public class MoodAnalyser {
-    public String analyseMood(String msg){
-            if(msg.equalsIgnoreCase("Happy")){
-                return "Happy";
-            }
-            else if(msg.equalsIgnoreCase("Sad") || msg.equalsIgnoreCase("Not Happy")){
-                return "Sad";
-            }
-            else{
-                return "Happy";
-            }
+    String msg;
+    public MoodAnalyser(){
+        this.msg = null;
+    }
+    public MoodAnalyser(String msg){
+        this.msg = msg;
+    }
+    public String analyseMood(){
+        if(msg.toLowerCase().contains("sad") || msg.toLowerCase().contains("not happy") || msg.toLowerCase().contains("unhappy")){
+            return "Sad";
+        }
+        else{
+            return "Happy";
+        }
     }
 }
 
